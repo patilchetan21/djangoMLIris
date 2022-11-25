@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IRIS Application</title>
+</head>
+<body>
+    <h1>IRIS Application</h1>
+    <hr>
+    {% if result %}
+        <h1>Result: </h1>
+        <p>Prediciton: Flower type = {{result}}</p>
+    {% endif %}
+    <hr>
+    
+    <form action="" method="POST">
+        {% csrf_token %}
+        Sepal Length: <input type="number" name="sepal_length" id="sepal_length"><br>
+        Sepal Width: <input type="number" name="sepal_width" id="sepal_width"><br>
+        Petal Length: <input type="number" name="petal_length" id="petal_length"><br>
+        Petal Width: <input type="number" name="petal_width" id="petal_width"><br>
+        <input type="submit" value="Predict">
+    </form>
+    
+</body>
+</html>
